@@ -1,0 +1,11 @@
+require('basic')
+require('keybindings')
+require('plugins')
+require('colorscheme')
+require('lsp')
+require('nvim-cmp')
+
+require('plugin-config.nvim-tree')
+require('plugin-config.bufferline')
+--require('plugin-config.auto-pairs')
+require('plugin-config.comment')
