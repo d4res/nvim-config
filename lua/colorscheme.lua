@@ -1,2 +1,2 @@
-local colorscheme = "industry"
-vim.cmd('colorscheme '..colorscheme)
+vim.cmd 'colorscheme darcula-solid'
+vim.cmd 'set termguicolors'

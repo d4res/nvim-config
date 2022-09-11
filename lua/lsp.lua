@@ -27,17 +27,21 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
   vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
   vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-  vim.keymap.set('n', '<space>f', vim.lsp.buf.format { async = true }, bufopts)
+  -- vim.keymap.set('n', '<space>f', vim.lsp.buf.format { async = true }, bufopts)
 end
 
+-- Set up lspconfig.
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 local lsp_flags = {
   -- This is the default in Nvim 0.7+
   debounce_text_changes = 150,
 }
 
-require('lspconfig')['sumneko_lua'].setup {
+local lspconfig = require('lspconfig')
+lspconfig['sumneko_lua'].setup {
     on_attach = on_attach,
     flags = lsp_flags,
+    capabilities = capabilities,
     settings = {
         Lua = {
             runtime = {
@@ -61,3 +65,5 @@ require('lspconfig')['sumneko_lua'].setup {
 
     }
 }
+
+lspconfig["gopls"].setup{}
