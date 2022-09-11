@@ -23,8 +23,7 @@ nvim_tree.setup({
         custom = { 'node_modules' },
     },
     view = {
-        -- 宽度
-        width = 40,
+        adaptive_size = true,
         -- 也可以 'right'
         side = 'left',
         -- 隐藏根目录

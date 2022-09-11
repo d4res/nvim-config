@@ -8,12 +8,13 @@ map("n", "<A-j>", "<C-w>j", opt)
 map("n", "<A-k>", "<C-w>k", opt)
 map("n", "<A-l>", "<C-w>l", opt)
 
-map("n", "<leader>t", ":sp|terminal<CR>", opt)
-map("n", "<leader>vt", ":vsp|terminal<CR>", opt)
+map("n", "<leader>t", ":terminal powershell<CR>", opt)
+map("n", "<leader>ht", ":sp|terminal powershell<CR>", opt)
+map("n", "<leader>vt", ":vsp|terminal powershell<CR>", opt)
 
-map("n", "q", ":wq<CR>", opt)
-map("n", "qq", ":q!<CR>", opt)
-map("n", "Q", ":qa!<CR>", opt)
+map("n", "q", ":Bdelete<CR>", opt)
+map("n", "<A-q>", ":q<CR>", opt)
+
 map("n", "<C-s>", ":w<CR>", opt)
 map("i", "<C-s>", "<Esc>:w<CR>", opt)
 
@@ -42,5 +43,3 @@ pluginKeys.nvimTreeList = {
     { key = "s", action = "system_open" },
 }
 return pluginKeys
-
-

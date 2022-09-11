@@ -1,12 +1,12 @@
---local status, autopairs = pcall(require, 'nvim-autopairs')
+local status, autopairs = pcall(require, 'nvim-autopairs')
 
---if not status then
---    vim.notify("nvim-autopairs not found")
---    return
---end
+if not status then
+    vim.notify("nvim-autopairs not found")
+    return
+end
 
---autopairs.setup({
---})
+autopairs.setup({
+})
 
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 local cmp = require('cmp')
