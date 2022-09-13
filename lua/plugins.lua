@@ -59,6 +59,9 @@ packer.startup({
         use {
             'lewis6991/gitsigns.nvim',
         }
+        
+        use 'APZelos/blamer.nvim'
+
     end,
     config = {
         display = {
