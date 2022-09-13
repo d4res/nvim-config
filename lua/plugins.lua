@@ -22,8 +22,47 @@ packer.startup({
 
         use 'windwp/nvim-autopairs'
         use 'numToStr/Comment.nvim'
-        
+
         use { "briones-gabriel/darcula-solid.nvim", requires = "rktjmp/lush.nvim" }
+
+        use "akinsho/toggleterm.nvim"
+        use 'voldikss/vim-floaterm'
+
+        -- use 'glepnir/dashboard-nvim'
+        use 'mhinz/vim-startify'
+        use {
+            'nvim-telescope/telescope.nvim', tag = '0.1.0',
+            requires = { {'nvim-lua/plenary.nvim'} }
+        }
+
+        use {
+            "folke/trouble.nvim",
+            requires = "kyazdani42/nvim-web-devicons",
+            config = function()
+                require("trouble").setup {
+                    -- your configuration comes here
+                    -- or leave it empty to use the default settings
+                    -- refer to the configuration section below
+                }
+            end
+        }
+
+        use {
+            "ray-x/lsp_signature.nvim",
+        }
+
+        use{
+            'weilbith/nvim-code-action-menu',
+            cmd = 'CodeActionMenu',
+        }
+
+        use {
+            'lewis6991/gitsigns.nvim',
+            config = function()
+                require('gitsigns').setup()
+            end
+            -- tag = 'release' -- To use the latest release (do not use this if you run Neovim nightly or dev builds!)
+        }
     end,
     config = {
         display = {

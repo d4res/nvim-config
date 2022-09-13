@@ -80,3 +80,22 @@ vim.o.showtabline = 2
 vim.o.showmode = false
 vim.g.loaded = 1
 vim.g.loaded_netrwPlugin = 1
+
+-- set code fold
+vim.cmd "set foldmethod=indent"
+vim.cmd "set nofoldenable"
+
+vim.g.cursorhold_updatetime = 100 
+
+local powershell_options = {
+  shell = vim.fn.executable "pwsh" and "pwsh" or "powershell",
+  shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;",
+  shellredir = "-RedirectStandardOutput %s -NoNewWindow -Wait",
+  shellpipe = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode",
+  shellquote = "",
+  shellxquote = "",
+}
+
+for option, value in pairs(powershell_options) do
+  vim.opt[option] = value
+end
